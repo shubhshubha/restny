@@ -1,0 +1,51 @@
+<?php
+
+   header ('content-type: text/plain');
+	
+	function preCmlnt($num,$b)
+	{
+		
+		
+	    $noOfDigit=0;
+	     $maxNum=0;
+	   $maxDigit=$b-1;
+	   $n=$num;
+	   // finding no of digits
+	   while($n!=0)
+	   {
+		 if($n<0)
+	     {
+			 $n=$n*(-1);
+		 }
+		 $noOfDigit++;
+         $n=floor($n/10);		 
+	   }
+	   
+	   // finding highest number to minus
+	   
+	   while($noOfDigit--)
+	   {
+		  $maxNum=$maxNum*10+$maxDigit;  
+	   }
+	   
+	   return $maxNum-(-$num);
+	   
+	}
+	
+	function Cmlnt($num,$b)
+	{
+		return preCmlnt($num,$b)+1;
+	}
+	$preCmlnt=preCmlnt(803,9);
+	$Cmlnt=Cmlnt(803,9);
+	
+	echo $preCmlnt."\n";
+	echo $Cmlnt;
+	
+	/*echo floor(-456/10)."\n";
+	echo floor(-45./10)."\n";
+	echo floor(-5/10);
+	echo floor(-1/10);*/
+
+
+?>
